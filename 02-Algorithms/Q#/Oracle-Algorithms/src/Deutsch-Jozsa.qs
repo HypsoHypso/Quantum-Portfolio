@@ -1,6 +1,6 @@
 operation ConstOracle(qs: Qubit[]) : Unit {
     // TODO
-    
+    // => Nothing to do for constant oracle
 }
 
 operation BalancedOracle(qs: Qubit[]) : Unit {
