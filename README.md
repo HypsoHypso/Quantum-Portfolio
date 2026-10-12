@@ -1,6 +1,6 @@
 # Quantum Computing Portfolio
 
-Hands-on quantum computing notebooks and implementations from my degree course, organized by topic. They cover fundamentals, algorithms, chemistry, optimization, error correction, quantum machine learning, neutral atoms and hardware noise, in Qiskit, Q# and Pulser.
+Hi! Here are hands-on quantum computing notebooks and implementations from my degree course, organized by topic. They cover fundamentals, algorithms, chemistry, optimization, error correction, quantum machine learning, neutral atoms and hardware noise, in Qiskit, Q# and Pulser.
 
 ## Contents
 
