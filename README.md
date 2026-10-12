@@ -1,37 +1,54 @@
 # Quantum Computing Portfolio
 
-A collection of hands-on quantum computing notebooks and implementations, organized by topic. The projects cover quantum fundamentals, algorithms, error correction, quantum machine learning, neutral atoms, and hardware noise.
+Hands-on quantum computing notebooks and implementations from my degree course, organized by topic. They cover fundamentals, algorithms, chemistry, optimization, error correction, quantum machine learning, neutral atoms and hardware noise, in Qiskit, Q# and Pulser.
 
-## Selected Work
+## Contents
 
-| Topic | Project highlights |
-| --- | --- |
-| Fundamentals | [Bell states](01-fundamentals/MAISSE_BellState.ipynb) and [quantum teleportation](01-fundamentals/MAISSE_teleportation.ipynb) |
-| Algorithms | [Grover search with Qiskit](02-algorithms/qiskit/grover/MAISSE_Grover.ipynb), [HHL implementation](02-algorithms/qiskit/hhl/HHL_implementation_presentation.ipynb), and Q# projects for [oracle algorithms](02-algorithms/qsharp/Fundamentals-Oracle), [Grover](02-algorithms/qsharp/Grover), [QFT and phase estimation](02-algorithms/qsharp/QFT-QPE), and [Shor](02-algorithms/qsharp/Shor) |
-| Quantum error correction | [Error-detection and correction activities](03-qec/MAISSE_QEC.ipynb), with separate [Qiskit three-qubit](03-qec/qiskit-3-qubit-code) and [Q# Shor-code](03-qec/qsharp-shor-code) implementations |
-| Quantum machine learning | [VQC](04-quantum-machine-learning/MAISSE_VQC.ipynb), [DQC](04-quantum-machine-learning/MAISSE_DQC.ipynb), and [QSCV](04-quantum-machine-learning/MAISSE_QSCV.ipynb) notebooks |
-| Neutral atoms | [Rydberg interaction simulation](05-neutral-atoms/MAISSE_Rydberg.ipynb) and [graph features](05-neutral-atoms/MAISSE_Graph_features.ipynb) |
-| Hardware noise | Notebooks on [coherence](06-hardware-noise/MAISSE_Coherence.ipynb) and [tomography](06-hardware-noise/MAISSE_Tomography.ipynb) |
+| Folder | Topic | Content |
+| --- | --- | --- |
+| [01-Fundamentals](01-Fundamentals) | Fundamentals | [Quantum teleportation](01-Fundamentals/Teleportation.ipynb) of a single-qubit state, with a built-in correctness check |
+| [02-Algorithms](02-Algorithms) | Algorithms | Qiskit: [Grover](02-Algorithms/Qiskit/Grover) and [HHL](02-Algorithms/Qiskit/HHL). Q#: [Grover](02-Algorithms/Q%23/Grover), [oracle algorithms](02-Algorithms/Q%23/Oracle-Algorithms) (Deutsch-Jozsa, Bernstein-Vazirani), [QFT and QPE](02-Algorithms/Q%23/QFT-QPE), [Shor](02-Algorithms/Q%23/Shor) |
+| [03-Chemistry](03-Chemistry) | Quantum chemistry | [VQE](03-Chemistry/VQE.ipynb), the variational eigensolver for chemistry problems |
+| [04-Optimization](04-Optimization) | Optimization | [QAOA](04-Optimization/QAOA.ipynb) for MaxCut on a 5-vertex graph, validated against brute force |
+| [05-Quantum-Machine-Learning](05-Quantum-Machine-Learning) | Quantum machine learning | [QSCV](05-Quantum-Machine-Learning/QSCV.ipynb) (quantum kernel + SVC/QSVC), [VQC](05-Quantum-Machine-Learning/VQC.ipynb) (variational classifier on Iris), [DQC](05-Quantum-Machine-Learning/DQC.ipynb) (differentiable quantum circuits for an ODE) |
+| [06-Error-Correction](06-Error-Correction) | Error correction | [Qiskit 3-qubit code](06-Error-Correction/qiskit-3-qubit-code) walkthrough, and a [Q# Shor code](06-Error-Correction/qsharp-shor-code) project |
+| [07-Neutral-Atoms](07-Neutral-Atoms) | Neutral atoms | [Rydberg blockade](07-Neutral-Atoms/Rydberg.ipynb) between two atoms, and [graph features](07-Neutral-Atoms/Graph_features.ipynb) to tell two graphs apart |
+| [08-Hardware-Noise](08-Hardware-Noise) | Hardware noise | [Coherence](08-Hardware-Noise/Coherence.ipynb) (T1 and T2 estimation with a thermal relaxation model) and [single-qubit tomography](08-Hardware-Noise/Tomography.ipynb) |
+
+Each folder has its own `README.md` with the details of its notebooks.
 
 ## Repository Map
 
 ```text
-01-fundamentals/                 States, entanglement, and teleportation
-02-algorithms/
-	qiskit/                         Grover and HHL notebooks
-	qsharp/                         Oracle algorithms, Grover, QFT/QPE, and Shor
-03-qec/                           Error-correction activities and implementations
-04-quantum-machine-learning/      VQC, DQC, and QSCV notebooks
-05-neutral-atoms/                 Rydberg and graph-feature notebooks
-06-hardware-noise/                 Coherence and tomography notebooks
+01-Fundamentals/                 Teleportation
+02-Algorithms/
+    Qiskit/                      Grover, HHL
+    Q#/                          Grover, Oracle-Algorithms, QFT-QPE, Shor
+03-Chemistry/                    VQE
+04-Optimization/                 QAOA
+05-Quantum-Machine-Learning/     QSCV, VQC, DQC
+06-Error-Correction/
+    qiskit-3-qubit-code/         3-qubit repetition code
+    qsharp-shor-code/            Shor code in Q#
+07-Neutral-Atoms/                Rydberg, Graph_features
+08-Hardware-Noise/               Coherence, Tomography
 ```
 
 ## Technologies
 
-- Python notebooks, including Qiskit-based circuit work
-- Q# projects for quantum algorithms and error correction
-- Pulser-based neutral-atom simulation
+- Python and Jupyter notebooks
+- [Qiskit](https://qiskit.org) with Qiskit Aer and Qiskit Machine Learning
+- Q# projects (each with its own `qsharp.json`)
+- [Pulser](https://pulser.readthedocs.io) for neutral-atom simulation
 
-## Exploring the Projects
+## Getting Started
 
-Open a `.ipynb` file in Jupyter or VS Code to read and run a notebook. Dependencies and setup can vary between notebooks; check the first cells before execution. Q# projects include their own `qsharp.json` configuration files.
+```bash
+git clone [https://github.com/HypsoHypso/Quantum-Portfolio.git](https://github.com/HypsoHypso/Quantum-Portfolio.git)
+cd Quantum-Portfolio
+python -m venv .venv && source .venv/bin/activate
+pip install qiskit qiskit-aer qiskit-machine-learning scikit-learn scipy numpy pandas matplotlib seaborn networkx pulser pulser-simulation jupyter
+jupyter lab
+```
+
+Dependencies vary between notebooks, so check the first cells of each one. For the Q# projects, open the project folder in VS Code with the Q# extension, or run them from Python with the `qsharp` package.
